@@ -1,6 +1,6 @@
 """AashiFX modern illustration system: aurora glow + gold contours + frosted glass + fine line icons + grain."""
 import math, random
-G="#d9b44a"; Y="#f1d98a"; B="#3ea6ff"; T="#2fd0a0"; P="#9b7bff"; O="#ff8a4a"; W="#f7f9fc"; C="#7cf0ff"
+G="#c9d3e6"; Y="#eef3fb"; B="#3ea6ff"; T="#2fd0a0"; P="#6f8cff"; O="#ff8a4a"; W="#f7f9fc"; C="#7cf0ff"
 SANS = 'font-family="Inter,\'Segoe UI\',system-ui,Arial,sans-serif"'; SERIF = 'font-family="Georgia,\'Times New Roman\',serif"'
 def _c(x,y,r): return f'<circle cx="{x}" cy="{y}" r="{r}"/>'
 GL = {  # fine line glyphs, drawn around (0,0) within about +-28
@@ -90,8 +90,8 @@ SG = {
  "page-contact":("chat","phone","people"),"page-about":("compass","people","bulb"),"page-portfolio":("image","layers","pen"),"page-services":("layers","chip","car"),
  "profile-car":("brochure","car","doc"),"profile-heavy":("brochure","crane","doc"),
 }
-PALS = {"brand":(B,P,T),"office":(G,O,B),"tech":(B,C,P),"trade":(T,G,B),"drive":(G,O,P),"power":(O,P,G),"site":(G,B,P)}
-ACC = {"brand":B,"office":G,"tech":C,"trade":T,"drive":O,"power":O,"site":G}
+PALS = {"brand":(B,P,T),"office":(G,B,T),"tech":(B,C,P),"trade":(T,B,G),"drive":(B,T,P),"power":(O,B,G),"site":(G,B,T)}
+ACC = {"brand":B,"office":G,"tech":C,"trade":T,"drive":P,"power":O,"site":G}
 GRAIN = '<filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="4"/><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0"/></filter>'
 FILT = '<filter id="b60" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="60"/></filter><filter id="b24" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="24"/></filter>'
 DEFS = ('<linearGradient id="gs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity=".3"/></linearGradient>'
@@ -144,7 +144,7 @@ def art(key, pillar, seed=1):
 
 NAMES = [("BrandX","Branding & Creative Design"),("OfficeX","SmartDocs & Documentation"),("TechX","IT & Digital Solutions"),("TradeX","Trading, Procurement & Supply"),("DriveX","Transportation & Mobility"),("PowerX","Equipment & Industrial Support")]
 KEYS = ["brand","office","tech","trade","drive","power"]
-COLS = [B, G, C, T, O, P]
+COLS = [B, G, C, T, P, O]
 HEX_POS = [(325,56),(618,184),(618,440),(325,620),(32,440),(32,184)]
 def hero_mix(links=None):
     """900x780 master hero: aurora + gold contours + core + six glass pillar cards (optionally linked)"""

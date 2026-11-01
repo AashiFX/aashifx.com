@@ -2,7 +2,7 @@
 :root {
   color-scheme: dark;
   --bg: #05070f; --bg2: #0a1024; --text: #e8ecf5; --muted: #9aa4bd;
-  --accent: #d9b44a; --accent-rgb: 217, 180, 74; --on-accent: #06080f;
+  --accent: #5db0ff; --accent-rgb: 93, 176, 255; --accent2: #2fd0a0; --silver: #c9d3e6; --on-accent: #04101f;
   --line: rgba(255, 255, 255, 0.12); --card: rgba(255, 255, 255, 0.035);
   --nav-bg: rgba(5, 7, 15, 0.92); --dots: rgba(255, 255, 255, 0.5);
   --glow: rgba(var(--accent-rgb), 0.2); --atlas-glow: rgba(80, 150, 255, 0.3);
@@ -15,7 +15,7 @@
   :root:not([data-theme="dark"]) {
     color-scheme: light;
     --bg: #f4f6fb; --bg2: #e6ecf6; --text: #0b1226; --muted: #4a5570;
-    --accent: #8a6a12; --accent-rgb: 138, 106, 18; --on-accent: #ffffff;
+    --accent: #1766c2; --accent-rgb: 23, 102, 194; --accent2: #0e8c69; --silver: #5a6b8c; --on-accent: #ffffff;
     --line: rgba(11, 18, 38, 0.14); --card: rgba(255, 255, 255, 0.75);
     --nav-bg: rgba(244, 246, 251, 0.94); --dots: rgba(11, 18, 38, 0.16);
     --glow: rgba(var(--accent-rgb), 0.14); --atlas-glow: rgba(40, 100, 200, 0.25);
@@ -24,7 +24,7 @@
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #f4f6fb; --bg2: #e6ecf6; --text: #0b1226; --muted: #4a5570;
-  --accent: #8a6a12; --accent-rgb: 138, 106, 18; --on-accent: #ffffff;
+  --accent: #1766c2; --accent-rgb: 23, 102, 194; --accent2: #0e8c69; --silver: #5a6b8c; --on-accent: #ffffff;
   --line: rgba(11, 18, 38, 0.14); --card: rgba(255, 255, 255, 0.75);
   --nav-bg: rgba(244, 246, 251, 0.94); --dots: rgba(11, 18, 38, 0.16);
   --glow: rgba(var(--accent-rgb), 0.14); --atlas-glow: rgba(40, 100, 200, 0.25);
@@ -48,7 +48,9 @@ button { font: inherit; color: inherit; }
 .nav { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); border-bottom: 1px solid var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 1rem; }
 .logo { direction: ltr; unicode-bidi: isolate; font-family: var(--font-head); font-weight: 700; letter-spacing: 0.04em; font-size: 1.2rem; }
-.logo b { color: var(--accent); }
+.logo { display: inline-flex; align-items: center; gap: 0.5rem; }
+.logo img { width: 32px; height: 32px; }
+.logo b { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .logo sup { font-size: 0.5em; color: var(--muted); margin-inline-start: 1px; }
 .menu { display: none; position: absolute; inset-inline: 0; top: 60px; background: var(--bg); border-bottom: 1px solid var(--line); padding: 0.5rem 1rem 1rem; flex-direction: column; }
 .menu.open { display: flex; }
@@ -72,7 +74,7 @@ button { font: inherit; color: inherit; }
 /* Buttons + type */
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.4rem; border-radius: 999px; font-weight: 600; border: 1px solid transparent; cursor: pointer; }
 .btn svg { width: 20px; height: 20px; }
-.btn-primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 0 30px rgba(var(--accent-rgb), 0.3); }
+.btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: var(--on-accent); box-shadow: 0 0 30px rgba(var(--accent-rgb), 0.3); }
 .btn-primary svg, .wa-fab svg { stroke: var(--on-accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .btn-ghost { border-color: var(--line); }
 .btn-ghost svg { stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -230,7 +232,7 @@ footer .wrap { display: grid; gap: 0.75rem; }
 .foot-nav a { color: var(--text); font-family: var(--font-head); }
 .foot-nav a:hover { color: var(--accent); }
 .foot-line { color: var(--text); font-family: var(--font-head); }
-.wa-fab { position: fixed; inset-inline-end: 1rem; bottom: 1rem; z-index: 15; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.5); }
+.wa-fab { position: fixed; inset-inline-end: 1rem; bottom: 1rem; z-index: 15; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent2)); box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.5); }
 .wa-fab svg { width: 26px; height: 26px; }
 @media (min-width: 860px) { .wa-fab { display: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
@@ -246,7 +248,7 @@ footer .wrap { display: grid; gap: 0.75rem; }
 .chip:hover a { color: var(--accent); }
 .get { display: flex; gap: 0.8rem; align-items: flex-start; }
 .get p { color: var(--text); font-weight: 500; }
-.tick { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-size: 0.85rem; font-weight: 700; }
+.tick { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: var(--on-accent); font-size: 0.85rem; font-weight: 700; }
 .work-card .points { padding-inline: 0.2rem; }
 
 /* Master hero illustration */
@@ -261,7 +263,7 @@ footer .wrap { display: grid; gap: 0.75rem; }
 /* Language group, Tamil, enquiry form */
 .langs { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .langs button { background: none; border: 0; padding: 0.35rem 0.7rem; cursor: pointer; font-size: 0.85rem; color: var(--muted); }
-.langs button.on { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+.langs button.on { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: var(--on-accent); font-weight: 600; }
 .langs button:not(.on):hover { color: var(--text); }
 [lang="ta"] body, [lang="ta"] h1, [lang="ta"] h2, [lang="ta"] h3, [lang="ta"] .jn, [lang="ta"] .art .cap b { font-family: "Latha", "Nirmala UI", "Noto Sans Tamil", "Tamil Sangam MN", var(--font); letter-spacing: 0; line-height: 1.35; }
 [lang="ta"] .logo, [lang="ta"] .langs { font-family: var(--font); }

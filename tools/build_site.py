@@ -224,7 +224,7 @@ def nav(cur):
     links = [("index","nav.home"),("services","nav.services"),("atlas","nav.atlas"),("portfolio","nav.portfolio"),("about","nav.about"),("contact","nav.contact")]
     a = ''.join(f'<a href="{p}.html"{" aria-current=\"page\"" if p==cur else ""} {i(k)}>{en(k)}</a>' for p,k in links)
     return f'''<header class="nav"><div class="wrap">
-  <a class="logo" href="index.html" aria-label="AashiFX™ home">Aashi<b>FX</b><sup>™</sup></a>
+  <a class="logo" href="index.html" aria-label="AashiFX™ home"><img src="assets/atlas-badge.webp" width="32" height="32" alt=""><span>Aashi<b>FX</b><sup>™</sup></span></a>
   <nav class="menu" id="menu" aria-label="Main">{a}</nav>
   <div class="tools">
     <button class="theme" data-theme-toggle type="button" aria-label="Light / Dark"><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.500 4a6.500 6.500 0 0 0 10.500 10.500z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
