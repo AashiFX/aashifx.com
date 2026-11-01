@@ -251,6 +251,9 @@
       "pg.power.a1": "Yes. Equipment and generator rental and supply are part of PowerX.",
       "pg.power.q2": "Can you support us on site?",
       "pg.power.a2": "Yes. We offer site operational support, including manpower and operational assistance.",
+      "f1": "6 pillars",
+      "f2": "English · Arabic",
+      "f3": "India · GCC",
       "ct.eyebrow": "Get in touch",
       "ct.title": "Contact",
       "ct.sub": "WhatsApp is the fastest way. We reply there first.",
@@ -534,6 +537,9 @@
       "pg.power.a1": "نعم. تأجير وتوريد المعدات والمولدات جزء من PowerX.",
       "pg.power.q2": "هل يمكنكم دعمنا في الموقع؟",
       "pg.power.a2": "نعم. نقدّم دعماً تشغيلياً في الموقع، يشمل العمالة والمساعدة التشغيلية.",
+      "f1": "6 ركائز",
+      "f2": "إنجليزي · عربي",
+      "f3": "الهند · الخليج",
       "ct.eyebrow": "تواصل معنا",
       "ct.title": "تواصل",
       "ct.sub": "واتساب أسرع وسيلة. نردّ عليك هناك أولاً.",
@@ -605,6 +611,14 @@
 
   document.addEventListener("click", function (e) {
     if (e.target.closest("[data-lang-toggle]")) { lang = lang === "en" ? "ar" : "en"; apply(lang); return; }
+    if (e.target.closest("[data-theme-toggle]")) {
+      var root = document.documentElement;
+      var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      var next = cur === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      store("theme", next);
+      return;
+    }
     var tb = e.target.closest("[data-tab]");
     if (tb) { selectTab(tb.getAttribute("data-tab")); return; }
     var b = e.target.closest("[data-burger]");
