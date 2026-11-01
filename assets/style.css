@@ -47,7 +47,7 @@ button { font: inherit; color: inherit; }
 /* Nav */
 .nav { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); border-bottom: 1px solid var(--line); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 1rem; }
-.logo { font-family: var(--font-head); font-weight: 700; letter-spacing: 0.04em; font-size: 1.2rem; }
+.logo { direction: ltr; unicode-bidi: isolate; font-family: var(--font-head); font-weight: 700; letter-spacing: 0.04em; font-size: 1.2rem; }
 .logo b { color: var(--accent); }
 .logo sup { font-size: 0.5em; color: var(--muted); margin-inline-start: 1px; }
 .menu { display: none; position: absolute; inset-inline: 0; top: 60px; background: var(--bg); border-bottom: 1px solid var(--line); padding: 0.5rem 1rem 1rem; flex-direction: column; }
@@ -195,15 +195,15 @@ a.art:hover img { transform: scale(1.04); }
 .page-hero { text-align: center; padding: 3.5rem 0 1.5rem; background: radial-gradient(ellipse 70% 80% at 50% 0%, var(--glow), transparent 70%); }
 .page-hero h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(2rem, 7vw, 3.4rem); line-height: 1.1; margin-bottom: 0.6rem; }
 .page-hero .lead { margin-inline: auto; }
-.banner { position: relative; isolation: isolate; color: #fff; }
-.banner > img { width: 100%; height: clamp(260px, 44vw, 460px); object-fit: cover; }
-.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3, 6, 14, 0.35), rgba(3, 6, 14, 0.85)); z-index: 1; }
-.banner .over { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; padding-bottom: clamp(1.25rem, 4vw, 2.5rem); }
-.banner h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(2.4rem, 8vw, 4.4rem); line-height: 1.02; }
-.banner .eyebrow { color: #e8c766; }
-.banner .lead { color: rgba(255, 255, 255, 0.85); margin-bottom: 1rem; }
-.banner .btn-primary { --on-accent: #06080f; background: #d9b44a; }
-.backlink { display: inline-block; color: rgba(255, 255, 255, 0.8); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.banner { width: min(1160px, 100% - 2rem); margin: 1.5rem auto 0; display: grid; gap: 1.5rem; align-items: center; }
+.banner > img { order: 1; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); }
+.banner .over { order: 2; position: static; display: block; padding: 0; }
+.banner .over .wrap { width: 100%; }
+.banner h1 { font-family: var(--font-head); font-weight: 400; font-size: clamp(2.2rem, 7vw, 3.8rem); line-height: 1.06; margin-bottom: 0.8rem; }
+.banner .lead { margin-bottom: 1.2rem; }
+.banner.short > img { aspect-ratio: 4 / 3; height: auto; }
+@media (min-width: 900px) { .banner { grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2.5rem; } .banner > img { order: 2; } .banner .over { order: 1; } }
+.backlink { display: inline-block; color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
 .backlink::before { content: "← "; }
 [dir="rtl"] .backlink::before { content: "→ "; }
 .two { display: grid; gap: 1rem; grid-template-columns: 1fr; }
@@ -234,3 +234,17 @@ footer .wrap { display: grid; gap: 0.75rem; }
 .wa-fab svg { width: 26px; height: 26px; }
 @media (min-width: 860px) { .wa-fab { display: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+
+/* Sub-service pages */
+.subgrid { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 760px) { .subgrid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .subgrid { grid-template-columns: repeat(4, 1fr); } }
+.subgrid .art .cap b { font-size: 1.02rem; }
+.block h2 { text-align: center; margin-bottom: 1.2rem; }
+.chip a { display: block; }
+.chip:hover { border-color: var(--accent); }
+.chip:hover a { color: var(--accent); }
+.get { display: flex; gap: 0.8rem; align-items: flex-start; }
+.get p { color: var(--text); font-weight: 500; }
+.tick { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--on-accent); font-size: 0.85rem; font-weight: 700; }
+.work-card .points { padding-inline: 0.2rem; }

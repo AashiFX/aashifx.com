@@ -3,12 +3,21 @@
 AashiFX™ · Creative Studio with Soul · Brand-to-Business Integrator.
 Six pillars: BrandX, OfficeX, TechX, TradeX, DriveX, PowerX. India and the GCC.
 
-Static site: plain HTML/CSS/JS, no build step, no dependencies.
+Static site: plain HTML/CSS/JS served as-is. Light and dark themes, EN/AR (RTL).
 
 ## Structure
 - `index.html`, `services.html`, `atlas.html`, `portfolio.html`, `about.html`, `contact.html`
-- `assets/style.css`: all styles (dark navy, gold glow, RTL-aware)
-- `assets/app.js`: EN/AR toggle (RTL), WhatsApp links (`WA_NUMBER` at the top), ATLAS tabs. All copy lives in its dictionaries.
+- 6 pillar pages (`brandx.html` ...) and 48 sub-service pages (`brandx-logo-identity.html` ...)
+- `assets/style.css`: all styles, tokenised light and dark palettes
+- `assets/app.js`: EN/AR toggle, theme toggle, WhatsApp links (`WA_NUMBER`), ATLAS tabs. Holds all copy.
+- `assets/art/`: generated SVG illustrations (one per page)
+- `tools/`: generators. `tools/build_site.py` writes every page and `assets/app.js`; `tools/illustrations.py` draws the artwork; `tools/subservices.py` holds sub-service copy.
+
+## Rebuild
+```bash
+python3 tools/build_site.py
+```
+Edit copy in `tools/build_site.py` / `tools/subservices.py`, scenes in `tools/illustrations.py`, styles in `assets/style.css`. Do not hand-edit generated `.html` or `assets/app.js`.
 
 ## Preview
 ```bash
