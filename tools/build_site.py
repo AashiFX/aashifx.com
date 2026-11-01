@@ -170,6 +170,7 @@ for k_, items_ in SUBS.items():
         open(R + f"assets/art/{sid_}.svg", "w").write(ill["render"](slug_, k_, n_ + len(SLUG)))
 for name_, pil_ in [("page-contact","site"),("page-about","site"),("page-portfolio","site"),("page-services","site"),("profile-car","drive"),("profile-heavy","power")]:
     open(R + f"assets/art/{name_}.svg", "w").write(ill["render"](name_, pil_, 3))
+HERO_SVG = ill["hero_master"]({k_: SLUG[k_] + ".html" for k_ in SLUG})
 def chip_link(k, n):
     sid, tk, _ = SUBLIST[k][n-1]
     return f'<li class="chip"><a href="{sid}.html" {i(tk)}>{en(tk)}</a></li>'
@@ -259,8 +260,9 @@ journey = ''.join(f'<li class="card">{ic(PILL[k][2])}<span class="jn">{PILL[k][1
 def work_tile(n, k): return f'<a class="art r43" href="portfolio.html">{img_art(k)}<span class="cap"><b {i(f"w{n}.t")}>{en(f"w{n}.t")}</b><small {i(f"w{n}.d")}>{en(f"w{n}.d")}</small></span></a>'
 home = f'''<section class="hero"><div class="wrap">
   <div>{S("p","hero.eyebrow","eyebrow")}{S("h1","hero.title")}{S("p","hero.sub","lead")}{S("p","hero.tag","tagline")}
-  <div class="cta-row">{wa_btn("", "hero.cta", "btn btn-primary")}<a class="btn btn-ghost" href="#pillars" {i("hero.cta2")}>{en("hero.cta2")}</a></div></div>
-  <div class="mosaic">{mosaic}</div>
+  <div class="cta-row">{wa_btn("", "hero.cta", "btn btn-primary")}<a class="btn btn-ghost" href="#pillars" {i("hero.cta2")}>{en("hero.cta2")}</a></div>
+  <div class="chip-row">{''.join(f'<a class="chip-link" href="{SLUG[p[0]]}.html">{p[1]}</a>' for p in PILLARS)}</div></div>
+  <div class="hero-art">{HERO_SVG}</div>
 </div></section>
 <div class="wrap">{facts}</div>
 <section id="pillars"><div class="wrap">

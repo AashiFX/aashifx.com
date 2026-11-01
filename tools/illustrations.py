@@ -238,3 +238,44 @@ def render(scene, pillar, seed=1):
     rx=r.choice([160,640]); decor+=circ(rx,r.randint(150,450),r.randint(130,210),"none",.18,gl,2)+circ(rx,300,r.randint(60,100),"none",.1,"#fff",2)
     body=S_[scene]()
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{c1}"/><stop offset="1" stop-color="{c2}"/></linearGradient><radialGradient id="l" cx="{r.choice([.3,.5,.7])}" cy="{r.choice([.3,.45])}" r=".62"><stop offset="0" stop-color="{gl}" stop-opacity=".5"/><stop offset="1" stop-color="{gl}" stop-opacity="0"/></radialGradient></defs><rect width="800" height="600" fill="url(#b)"/><rect width="800" height="600" fill="url(#l)"/>{decor}{body}</svg>'''
+
+# ---------- master hero: the AashiFX universe ----------
+def hero_master(links=None):
+    links = links or {}
+    r = random.Random(11)
+    stars = ''.join(f'<circle cx="{r.randint(10,890)}" cy="{r.randint(10,770)}" r="{r.choice([.8,1,1.3,1.8])}" fill="#fff" opacity="{r.choice([.25,.4,.6,.85])}"/>' for _ in range(140))
+    sparks = ''.join(sparkle(x, y, s_) for x, y, s_ in [(120,110,1.4),(790,90,1.1),(70,420,.9),(840,470,1.3),(300,730,1),(640,60,.8)])
+    orbits = (f'<g fill="none" stroke="{G}" stroke-opacity=".28" stroke-width="1.6">'
+              '<ellipse cx="450" cy="390" rx="400" ry="330"/><ellipse cx="450" cy="390" rx="300" ry="250"/><ellipse cx="450" cy="390" rx="190" ry="160"/></g>'
+              f'<g fill="none" stroke="{B}" stroke-opacity=".22" stroke-width="1.4" stroke-dasharray="3 9"><ellipse cx="450" cy="390" rx="360" ry="200" transform="rotate(-24 450 390)"/><ellipse cx="450" cy="390" rx="360" ry="200" transform="rotate(24 450 390)"/></g>')
+    # planets: (key, name, cx, cy, icon, ring colour)
+    pos = [("brand","BrandX",450,120),("office","OfficeX",712,250),("tech","TechX",712,520),("trade","TradeX",450,655),("drive","DriveX",188,520),("power","PowerX",188,250)]
+    icons = {
+     "brand": g(0,0,.42,0,logo_mark()),
+     "office": g(0,2,.3,0,doc(180,230,G,4)),
+     "tech": g(0,0,.5,0,rect(-60,-60,120,120,"#0a1430",16,1,G,6)+rect(-36,-36,72,72,"none",8,1,B,4)+path("M-60 -24h-28M-60 24h-28M60 -24h28M60 24h28M-24 -60v-28M24 -60v-28M-24 60v28M24 60v28","none",G,6)),
+     "trade": g(0,8,.62,0,cube(60,Y,G)),
+     "drive": g(0,8,.27,0,car(G)),
+     "power": g(0,10,.3,0,excavator(G)),
+    }
+    link_lines = ''.join(f'<path d="M450 390L{x} {y}" stroke="{G}" stroke-opacity=".5" stroke-width="2.4" stroke-dasharray="2 10" stroke-linecap="round"/>' for _,_,x,y in pos)
+    hexline = f'<path d="M{" L".join(f"{x} {y}" for _,_,x,y in pos)}Z" fill="none" stroke="{B}" stroke-opacity=".35" stroke-width="2"/>'
+    planets = ''
+    for k,name,x,y in pos:
+        gl = PAL[k][2]
+        body = (f'<g class="pl"><circle cx="{x}" cy="{y}" r="88" fill="{gl}" opacity=".16"/><circle cx="{x}" cy="{y}" r="66" fill="url(#pbg)" stroke="{G}" stroke-width="4"/>'
+                f'<circle cx="{x}" cy="{y}" r="74" fill="none" stroke="{gl}" stroke-opacity=".6" stroke-width="2" stroke-dasharray="4 8"/>'
+                f'<g transform="translate({x} {y})">{icons[k]}</g></g>'
+                f'<text x="{x}" y="{y+100}" text-anchor="middle" font-family="Georgia,serif" font-size="25" fill="#f2f4fa">{name}</text>')
+        planets += (f'<a href="{links[k]}" aria-label="{name}">{body}</a>' if k in links else body)
+    core = (f'<circle cx="450" cy="390" r="150" fill="url(#core)" opacity=".55"/><circle cx="450" cy="390" r="104" fill="none" stroke="{G}" stroke-width="3" stroke-dasharray="6 10"/>'
+            f'<circle cx="450" cy="390" r="82" fill="url(#coref)" stroke="{Y}" stroke-width="4"/>'
+            f'<g transform="translate(450 390)"><rect x="-56" y="-11" width="112" height="22" rx="11" fill="{D}" transform="rotate(45)"/><rect x="-56" y="-11" width="112" height="22" rx="11" fill="{W}" transform="rotate(-45)"/><circle r="9" fill="{G}"/></g>')
+    return f'''<svg viewBox="0 0 900 780" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AashiFX: six pillars around one core" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="hbg" cx=".5" cy=".5" r=".75"><stop offset="0" stop-color="#16295c"/><stop offset=".6" stop-color="#0a1330"/><stop offset="1" stop-color="#04060e"/></radialGradient>
+<radialGradient id="core"><stop offset="0" stop-color="{G}" stop-opacity=".9"/><stop offset="1" stop-color="{G}" stop-opacity="0"/></radialGradient>
+<radialGradient id="coref" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#f6e7b0"/><stop offset="1" stop-color="#b8922e"/></radialGradient>
+<radialGradient id="pbg" cx=".4" cy=".35" r=".9"><stop offset="0" stop-color="#1d3166"/><stop offset="1" stop-color="#0a1128"/></radialGradient>
+<radialGradient id="neb1" cx=".25" cy=".2" r=".5"><stop offset="0" stop-color="{B}" stop-opacity=".35"/><stop offset="1" stop-color="{B}" stop-opacity="0"/></radialGradient>
+<radialGradient id="neb2" cx=".8" cy=".85" r=".5"><stop offset="0" stop-color="{P}" stop-opacity=".3"/><stop offset="1" stop-color="{P}" stop-opacity="0"/></radialGradient></defs>
+<rect width="900" height="780" fill="url(#hbg)"/><rect width="900" height="780" fill="url(#neb1)"/><rect width="900" height="780" fill="url(#neb2)"/>{stars}{orbits}{hexline}{link_lines}{core}{planets}{sparks}</svg>'''
