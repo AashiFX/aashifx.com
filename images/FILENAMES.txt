@@ -1,0 +1,63 @@
+AASHIFX WEBSITE - IMAGE FILENAMES (save generated images into the 'images' folder, 1600x1200 PNG)
+
+hero.png  (1800x1560)
+
+BrandX - Branding & Creative Design
+  brandx-logo-identity.png   <- Logo design and brand identity
+  brandx-corporate-branding.png   <- Corporate branding
+  brandx-graphic-design.png   <- Graphic design
+  brandx-print-banners.png   <- Flyers, posters and banners
+  brandx-social-media.png   <- Social media creatives
+  brandx-brochures-profiles.png   <- Brochures, catalogues and company profiles
+  brandx-marketing-materials.png   <- Marketing and advertising materials
+  brandx-creative-strategy.png   <- Creative strategy and visual communication
+
+OfficeX - SmartDocs & Business Documentation
+  officex-quotes-invoices.png   <- Quotations and invoices
+  officex-proposals.png   <- Business proposals
+  officex-company-profiles.png   <- Company profiles
+  officex-reports-statements.png   <- Reports and statements
+  officex-sops-templates.png   <- SOPs and business templates
+  officex-agreements-letters.png   <- Agreements and business letters
+  officex-bilingual-docs.png   <- Bilingual documentation (English/Arabic)
+  officex-office-admin.png   <- Office administration and documentation systems
+
+TechX - IT & Digital Solutions
+  techx-pc-support.png   <- Computer and laptop support
+  techx-os-install.png   <- Operating system installation
+  techx-software-install.png   <- Software installation and deployment
+  techx-networking.png   <- Networking and infrastructure
+  techx-server-admin.png   <- Windows Server and system administration
+  techx-backup-recovery.png   <- Data backup and recovery
+  techx-troubleshooting.png   <- Troubleshooting and maintenance
+  techx-integration-automation.png   <- System integration and automation
+
+TradeX - Trading, Procurement & Supply
+  tradex-general-trading.png   <- General trading
+  tradex-industrial-supplies.png   <- Industrial and commercial supplies
+  tradex-product-sourcing.png   <- Product sourcing
+  tradex-procurement.png   <- Procurement and purchasing support
+  tradex-vendor-coordination.png   <- Vendor coordination
+  tradex-safety-equipment.png   <- Safety materials and equipment
+  tradex-medical-scientific.png   <- Medical and scientific equipment
+  tradex-lab-equipment.png   <- Laboratory equipment
+  tradex-multi-category.png   <- Multi-category product supply
+
+DriveX - Transportation & Mobility
+  drivex-car-rental.png   <- Car rental services
+  drivex-corporate-rental.png   <- Corporate vehicle rental
+  drivex-transport-solutions.png   <- Transportation solutions
+  drivex-fleet-management.png   <- Fleet management support
+  drivex-vehicle-operations.png   <- Vehicle operations
+  drivex-mobility-solutions.png   <- Mobility solutions
+  drivex-logistics.png   <- Logistics coordination
+
+PowerX - Equipment & Industrial Support
+  powerx-equipment-rental.png   <- Equipment rental
+  powerx-heavy-machinery.png   <- Heavy machinery support
+  powerx-generators.png   <- Generator rental and supply
+  powerx-industrial-equipment.png   <- Industrial equipment
+  powerx-scientific-equipment.png   <- Scientific equipment
+  powerx-site-support.png   <- Site operational support
+  powerx-equipment-sourcing.png   <- Equipment sourcing
+  powerx-manpower.png   <- Manpower and operational assistance

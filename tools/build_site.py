@@ -173,13 +173,38 @@ for k_, items_ in SUBS.items():
 for name_, pil_ in [("page-contact","site"),("page-about","site"),("page-portfolio","site"),("page-services","site"),("profile-car","drive"),("profile-heavy","power")]:
     open(R + f"assets/art/{name_}.svg", "w").write(ma["art"](name_, pil_, _seed()))
 for k_ in SLUG: open(R + f"assets/art/{SLUG[k_]}.svg", "w").write(ma["art"]("pillar-" + k_, k_, _seed()))
+
+# ---------- real images (optional): drop PNG/JPG into images/, they are optimised into assets/img/*.webp ----------
+IMG_NAME = {"brandx-flyers-posters-banners":"brandx-print-banners","brandx-brochures-catalogues-profiles":"brandx-brochures-profiles","brandx-marketing-advertising":"brandx-marketing-materials",
+ "officex-quotations-invoices":"officex-quotes-invoices","officex-business-proposals":"officex-proposals","officex-office-admin-systems":"officex-office-admin",
+ "techx-computer-laptop-support":"techx-pc-support","techx-os-installation":"techx-os-install","techx-software-deployment":"techx-software-install","techx-networking-infrastructure":"techx-networking","techx-windows-server-admin":"techx-server-admin","techx-troubleshooting-maintenance":"techx-troubleshooting",
+ "tradex-industrial-commercial-supplies":"tradex-industrial-supplies","tradex-procurement-support":"tradex-procurement","tradex-safety-materials":"tradex-safety-equipment","tradex-laboratory-equipment":"tradex-lab-equipment","tradex-multi-category-supply":"tradex-multi-category",
+ "drivex-corporate-vehicle-rental":"drivex-corporate-rental","drivex-transportation-solutions":"drivex-transport-solutions","drivex-logistics-coordination":"drivex-logistics",
+ "powerx-heavy-machinery-support":"powerx-heavy-machinery","powerx-generator-rental-supply":"powerx-generators","powerx-site-operational-support":"powerx-site-support","powerx-manpower-operational-assistance":"powerx-manpower"}
+def optimise_images():
+    try: from PIL import Image
+    except ImportError: return
+    os.makedirs(R + "assets/img", exist_ok=True)
+    for f in sorted(os.listdir(R + "images")):
+        base, ext = os.path.splitext(f)
+        if ext.lower() not in (".png", ".jpg", ".jpeg", ".webp"): continue
+        dst = R + f"assets/img/{base}.webp"
+        if os.path.exists(dst) and os.path.getmtime(dst) >= os.path.getmtime(R + "images/" + f): continue
+        im = Image.open(R + "images/" + f).convert("RGB"); mw = 1800 if base == "hero" else 1600
+        if im.width > mw: im = im.resize((mw, round(im.height * mw / im.width)))
+        im.save(dst, "WEBP", quality=82, method=6)
+optimise_images()
+def art_src(name):
+    base = IMG_NAME.get(name, name)
+    return f"assets/img/{base}.webp" if os.path.exists(R + f"assets/img/{base}.webp") else f"assets/art/{name}.svg"
 HERO_SVG = ma["hero_mix"]({k_: SLUG[k_] + ".html" for k_ in SLUG})
+HERO_HTML = (f'<img src="assets/img/hero.webp" width="1800" height="1560" alt="AashiFX: six pillars, one establishment" fetchpriority="high">' if os.path.exists(R + "assets/img/hero.webp") else HERO_SVG)
 def chip_link(k, n):
     sid, tk, _ = SUBLIST[k][n-1]
     return f'<li class="chip"><a href="{sid}.html" {i(tk)}>{en(tk)}</a></li>'
 def img_art(name, eager=False):
     a = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
-    return f'<img src="assets/art/{name}.svg" width="800" height="600" alt="" {a}>'
+    return f'<img src="{art_src(name)}" width="800" height="600" alt="" {a}>'
 def pbanner(art, eb, t, s_, h1=None):
     h = h1 or S("h1", t)
     return f'<div class="banner short">{img_art(art, True)}<div class="over"><div class="wrap">{S("p",eb,"eyebrow")}{h}{S("p",s_,"lead")}</div></div></div>'
@@ -203,13 +228,13 @@ def nav(cur):
   <nav class="menu" id="menu" aria-label="Main">{a}</nav>
   <div class="tools">
     <button class="theme" data-theme-toggle type="button" aria-label="Light / Dark"><svg class="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.500 4a6.500 6.500 0 0 0 10.500 10.500z"/></svg><svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400"/></svg></button>
-    <button class="lang" data-lang-toggle type="button" {i("lang.btn")}>{en("lang.btn")}</button>
+    <div class="langs" role="group" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ta" lang="ta">த</button><button type="button" data-lang="ar" lang="ar">ع</button></div>
     <button class="burger" data-burger type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">☰</button>
   </div>
 </div></header>'''
 FOOT = f'''<footer><div class="wrap">{FOOTNAV}
   <p class="foot-line" {i("foot.line")}>{en("foot.line")}</p>
-  <p {i("foot.reach")}>{en("foot.reach")}</p>
+  <p {i("foot.reach")}>{en("foot.reach")} <a href="mailto:admin@aashifx.com" dir="ltr">admin@aashifx.com</a></p>
   <p {i("foot.rights")}>{en("foot.rights")}</p>
 </div></footer>
 <a class="wa-fab" data-wa href="https://wa.me/" rel="noopener" aria-label="WhatsApp">{WAI}</a>'''
@@ -250,7 +275,7 @@ TOPICS = {"brand":"BrandX","office":"OfficeX","tech":"TechX","trade":"TradeX","d
 
 # ---------- Home (picture-first) ----------
 for k_,e_,a_ in [("f1","6 pillars","6 ركائز"),("f2","English · Arabic","إنجليزي · عربي"),("f3","India · GCC","الهند · الخليج")]: add(k_,e_,a_)
-def art_img(k, alt=""): return f'<img src="assets/art/{SLUG[k]}.svg" width="800" height="600" alt="{alt}" loading="lazy" decoding="async">'
+def art_img(k, alt=""): return img_art(SLUG[k])
 def faq_item(qk, ak): return f'<details class="faq"><summary {i(qk)}>{en(qk)}</summary><p {i(ak)}>{en(ak)}</p></details>'
 def tile_link(k, big=False):
     return f'<a class="art r43" href="{SLUG[k]}.html">{art_img(k)}<span class="cap"><b>{PILL[k][1]}</b><small {i(f"s.{k}.n")}>{en(f"s.{k}.n")}</small></span></a>'
@@ -265,7 +290,7 @@ home = f'''<section class="hero"><div class="wrap">
   <div>{S("p","hero.eyebrow","eyebrow")}{S("h1","hero.title")}{S("p","hero.sub","lead")}{S("p","hero.tag","tagline")}
   <div class="cta-row">{wa_btn("", "hero.cta", "btn btn-primary")}<a class="btn btn-ghost" href="#pillars" {i("hero.cta2")}>{en("hero.cta2")}</a></div>
   <div class="chip-row">{''.join(f'<a class="chip-link" href="{SLUG[p[0]]}.html">{p[1]}</a>' for p in PILLARS)}</div></div>
-  <div class="hero-art">{HERO_SVG}</div>
+  <div class="hero-art">{HERO_HTML}</div>
 </div></section>
 <div class="wrap">{facts}</div>
 <section id="pillars"><div class="wrap">
@@ -348,12 +373,32 @@ add("ct.eyebrow","Get in touch","تواصل معنا"); add("ct.title","Contact"
 add("ct.sub","WhatsApp is the fastest way. We reply there first.","واتساب أسرع وسيلة. نردّ عليك هناك أولاً.")
 add("ct.topic","Pick a pillar to start the chat","اختر ركيزة لبدء المحادثة"); add("ct.num","WhatsApp and phone","واتساب وهاتف")
 add("ct.reach","Serving India and the GCC.","نخدم الهند ودول الخليج.")
+
+EXTRA_TA = {}
+def add3(k, e, a, t): add(k, e, a); EXTRA_TA[k] = t
+add3("ct.email","Email us","راسلنا عبر البريد","மின்னஞ்சல் அனுப்புக")
+add3("ct.form","Send an enquiry","أرسل استفسارك","விசாரணை அனுப்புக")
+add3("ct.f.name","Name","الاسم","பெயர்"); add3("ct.f.contact","Email or phone","البريد الإلكتروني أو الهاتف","மின்னஞ்சல் அல்லது தொலைபேசி")
+add3("ct.f.service","Service","الخدمة","சேவை"); add3("ct.f.msg","Message","الرسالة","செய்தி"); add3("ct.f.send","Send enquiry","أرسل استفسارك","விசாரணை அனுப்புக")
+add3("thx.t","Thank you","شكراً لك","நன்றி"); add3("thx.m","Your enquiry has been received. We will get back to you shortly.","تم استلام استفسارك. سنعاود التواصل معك قريباً.","உங்கள் விசாரணை பெறப்பட்டது. விரைவில் தொடர்பு கொள்வோம்.")
+add3("thx.b","Back to home","العودة إلى الرئيسية","முகப்புக்குத் திரும்ப")
 chips = ''.join(f'<a class="chip-link" data-wa data-wa-topic="{TOPICS[k]}" href="https://wa.me/" rel="noopener">{TOPICS[k]}</a>' for k,*_ in PILLARS)
-contact = page("contact","AashiFX™ | Contact","Contact AashiFX™ on WhatsApp.",
+opts = ''.join(f'<option value="{TOPICS[k]}">{TOPICS[k]} · {D["en"][f"s.{k}.n"]}</option>' for k,*_ in PILLARS)
+contact = page("contact","AashiFX™ | Contact","Contact AashiFX™ on WhatsApp, email or the enquiry form.",
   pbanner("page-contact","ct.eyebrow","ct.title","ct.sub")+f'''<section><div class="wrap contact">
 <div class="card">{S("p","ct.num","eyebrow")}<p class="bignum" dir="ltr">+966 53 074 1843</p>{S("p","ct.reach","muted")}
+<p style="margin-top:.5rem"><a class="more" href="mailto:admin@aashifx.com" dir="ltr">admin@aashifx.com</a></p>
 <div class="cta-row" style="margin-top:1.25rem">{wa_btn("", "hero.cta", "btn btn-primary")}</div></div>
-<div>{S("p","ct.topic","muted")}<div class="chips big">{chips}</div></div></div></section>''')
+<div>{S("p","ct.topic","muted")}<div class="chips big">{chips}</div></div></div></section>
+<section style="padding-top:0"><div class="wrap narrow"><form id="enquiry" class="card form" name="enquiry" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<h2 class="formh" {i("ct.form")}>{en("ct.form")}</h2><input type="hidden" name="form-name" value="enquiry"><p class="hp"><label>Do not fill <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label><span {i("ct.f.name")}>{en("ct.f.name")}</span><input name="name" required autocomplete="name"></label>
+<label><span {i("ct.f.contact")}>{en("ct.f.contact")}</span><input name="contact" required></label>
+<label><span {i("ct.f.service")}>{en("ct.f.service")}</span><select name="pillar"><option value="">-</option>{opts}</select></label>
+<label><span {i("ct.f.msg")}>{en("ct.f.msg")}</span><textarea name="message" rows="4" required></textarea></label>
+<button class="btn btn-primary" type="submit"><span {i("ct.f.send")}>{en("ct.f.send")}</span></button></form></div></section>''')
+thanks = page("contact","Thank you | AashiFX™","Enquiry received.",
+  f'''<section class="final" style="min-height:50vh;display:grid;align-items:center"><div class="wrap">{S("h2","thx.t")}{S("p","thx.m","muted")}<div class="cta-row"><a class="btn btn-primary" href="index.html" {i("thx.b")}>{en("thx.b")}</a></div></div></section>''')
 
 # ---------- About ----------
 add("ab.eyebrow","About","من نحن"); add("ab.sub","Brand-to-Business Integrator. One accountable person behind every project.","مُتكامل من العلامة إلى الأعمال. شخص واحد مسؤول عن كل مشروع.")
@@ -410,22 +455,43 @@ ahero=f'''<section class="page-hero"><div class="wrap">{S("p","atlas.eyebrow","e
 atlas = page("atlas","AashiFX™ | ATLAS™ Executive Intelligence","ATLAS™ by AashiFX™: Executive Intelligence. Curated news in English, Arabic and Tamil, sourced from Saudi Gazette.",
   ahero+f'<section><div class="wrap"><div class="tabs" role="tablist">{tabs}</div>{S("p","at.note","muted note")}{panes}</div></section>')
 
-for n,h in tuple(PILLAR_PAGES.items())+tuple(SUB_PAGES.items())+(("index",index),("services",services),("contact",contact),("about",about),("portfolio",portfolio),("atlas",atlas)):
-    open(R+n+".html","w").write(h)
+PAGES = tuple(PILLAR_PAGES.items())+tuple(SUB_PAGES.items())+(("index",index),("services",services),("contact",contact),("about",about),("portfolio",portfolio),("atlas",atlas),("thanks",thanks))
+SITE = "https://aashifx.com/"
+urls = []
+for n,h in PAGES:
+    t_ = re.search(r"<title>(.*?)</title>", h).group(1); d_ = re.search(r'<meta name="description" content="(.*?)">', h).group(1)
+    meta = (f'<link rel="canonical" href="{SITE}{n}.html"><meta property="og:type" content="website"><meta property="og:site_name" content="AashiFX™">'
+            f'<meta property="og:title" content="{t_}"><meta property="og:description" content="{d_}"><meta property="og:url" content="{SITE}{n}.html">'
+            f'<meta property="og:image" content="{SITE}assets/og.png"><meta name="twitter:card" content="summary_large_image">')
+    if n == "thanks": meta += '<meta name="robots" content="noindex">'
+    else: urls.append(n)
+    open(R+n+".html","w").write(h.replace("</head>", meta + "</head>", 1))
+open(R+"sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f"<url><loc>{SITE}{u}.html</loc></url>" for u in urls) + "</urlset>\n")
+open(R+"robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n")
 
 # ---------- app.js ----------
+
+_zi = json.load(open(os.path.join(TOOLS, "zip_i18n.json"), encoding="utf8"))
+D["ta"] = {}
+for k_, v_ in D["en"].items():
+    if v_ in _zi: D["ta"][k_] = _zi[v_]["ta"]
+D["ta"].update(EXTRA_TA)
+D["ta"].update({"nav.portfolio":"பணித்தொகுப்பு","hero.cta":"WhatsApp-இல் உரையாடுங்கள்","hero.cta2":"ஆறு தூண்களைப் பார்க்க","hero.tag":"வடிவமை. ஆவணப்படுத்து. வழங்கு.","final.cta2":"தொடர்பு பக்கம்","ct.title":"தொடர்பு","sv.title":"சேவைகள்","pill.eyebrow":"ஆறு தூண்கள்","pill.title":"ஒரே நிறுவனம். ஒரே அடையாளம்.","foot.line":"ஆறு தூண்கள். ஒரே நிறுவனம். ஒரே அடையாளம்.","foot.rights":"© 2026 AashiFX™. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.","pg.back":"அனைத்து சேவைகள்","sv.ask":"WhatsApp-இல் விசாரிக்க","pg.cta":"WhatsApp செய்தியுடன் தொடங்குங்கள்","pg.s1":"கோரிக்கை","pg.s2":"செயலாக்கம்","pg.s3":"வழங்கல்","pg.proc":"எப்படி இயங்குகிறது","about.role":"நிறுவனர் & படைப்பு இயக்குநர்"})
 def dump(l): return ",\n".join(f"      {json.dumps(k)}: {json.dumps(v, ensure_ascii=False)}" for k,v in D[l].items())
-JS = '''/* AashiFX™ site: EN/AR toggle (RTL), WhatsApp links, ATLAS tabs. No dependencies. */
+JS = '''/* AashiFX™ site: EN/TA/AR switch (RTL for Arabic), theme toggle, WhatsApp links, enquiry form, ATLAS tabs. No dependencies. */
 (function () {
   // WhatsApp number: country code + number, digits only
   var WA_NUMBER = "966530741843";
-  var WA_TEXT = { en: "Hi AashiFX, I'd like to discuss a project.", ar: "مرحباً AashiFX، أودّ مناقشة مشروع." };
+  var WA_TEXT = { en: "Hi AashiFX, I'd like to discuss a project.", ar: "مرحباً AashiFX، أودّ مناقشة مشروع.", ta: "வணக்கம் AashiFX, ஒரு திட்டம் பற்றி பேச விரும்புகிறேன்." };
 
   var T = {
     en: {
 %s
     },
     ar: {
+%s
+    },
+    ta: {
 %s
     }
   };
@@ -440,11 +506,11 @@ JS = '''/* AashiFX™ site: EN/AR toggle (RTL), WhatsApp links, ATLAS tabs. No d
   }
 
   function apply(lang) {
-    var d = T[lang];
+    var d = T[lang], f = T.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var v = d[el.getAttribute("data-i18n")];
+      var k = el.getAttribute("data-i18n"), v = d[k] || f[k];
       if (v) el.textContent = v;
     });
     document.querySelectorAll("[data-wa]").forEach(function (a) {
@@ -452,16 +518,30 @@ JS = '''/* AashiFX™ site: EN/AR toggle (RTL), WhatsApp links, ATLAS tabs. No d
       var text = WA_TEXT[lang] + (topic ? " (" + topic + ")" : "");
       a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
     });
+    document.querySelectorAll("[data-lang]").forEach(function (b) { var on = b.getAttribute("data-lang") === lang; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
     selectTab(lang);
     store("lang", lang);
   }
 
   var lang = store("lang");
-  if (lang !== "ar" && lang !== "en") lang = (navigator.language || "").slice(0, 2) === "ar" ? "ar" : "en";
+  if (lang !== "ar" && lang !== "en" && lang !== "ta") { var nl = (navigator.language || "").slice(0, 2); lang = nl === "ar" ? "ar" : nl === "ta" ? "ta" : "en"; }
   apply(lang);
 
+  var form = document.getElementById("enquiry");
+  if (form) form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var fd = new FormData(form);
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(fd).toString() })
+      .then(function (r) { if (!r.ok) throw new Error("not ok"); location.href = "thanks.html"; })
+      .catch(function () {
+        var t = WA_TEXT[lang] + "\\n" + fd.get("name") + "\\n" + fd.get("contact") + "\\n" + (fd.get("pillar") || "") + "\\n" + fd.get("message");
+        window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t), "_blank");
+      });
+  });
+
   document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-lang-toggle]")) { lang = lang === "en" ? "ar" : "en"; apply(lang); return; }
+    var lb = e.target.closest("[data-lang]");
+    if (lb) { lang = lb.getAttribute("data-lang"); apply(lang); return; }
     if (e.target.closest("[data-theme-toggle]")) {
       var root = document.documentElement;
       var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
@@ -479,7 +559,7 @@ JS = '''/* AashiFX™ site: EN/AR toggle (RTL), WhatsApp links, ATLAS tabs. No d
     }
   });
 })();
-''' % (dump("en"), dump("ar"))
+''' % (dump("en"), dump("ar"), dump("ta"))
 open(R+"assets/app.js","w").write(JS)
 
 # css lives in assets/style.css (edited directly)

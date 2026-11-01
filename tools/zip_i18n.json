@@ -1,0 +1,390 @@
+{
+"Home": {
+"ta": "முகப்பு",
+"ar": "الرئيسية"
+},
+"Services": {
+"ta": "சேவைகள்",
+"ar": "الخدمات"
+},
+"About": {
+"ta": "எங்களைப் பற்றி",
+"ar": "من نحن"
+},
+"Contact": {
+"ta": "தொடர்பு",
+"ar": "اتصل بنا"
+},
+"Trading, Procurement & Supply": {
+"ta": "வர்த்தகம், கொள்முதல் & விநியோகம்",
+"ar": "التجارة والمشتريات والتوريد"
+},
+"Medical and scientific equipment": {
+"ta": "மருத்துவ & அறிவியல் உபகரணங்கள்",
+"ar": "المعدات الطبية والعلمية"
+},
+"What to expect": {
+"ta": "எதிர்பார்க்கலாம்",
+"ar": "ما يمكنك توقعه"
+},
+"A quick review of your requirement": {
+"ta": "உங்கள் தேவையின் விரைவான மதிப்பாய்வு",
+"ar": "مراجعة سريعة لاحتياجك"
+},
+"Clear scope, price and timeline": {
+"ta": "தெளிவான நோக்கம், விலை மற்றும் காலக்கெடு",
+"ar": "نطاق وسعر ومدة واضحة"
+},
+"Professional delivery and follow-up": {
+"ta": "தொழில்முறை வழங்கல் மற்றும் தொடர் உதவி",
+"ar": "تسليم احترافي ومتابعة"
+},
+"Enquire on WhatsApp": {
+"ta": "WhatsApp-இல் விசாரிக்க",
+"ar": "استفسر عبر واتساب"
+},
+"Email us": {
+"ta": "மின்னஞ்சல் அனுப்புக",
+"ar": "راسلنا"
+},
+"More in this pillar": {
+"ta": "இந்த தூணில் மேலும்",
+"ar": "المزيد في هذه الركيزة"
+},
+"General trading": {
+"ta": "பொது வர்த்தகம்",
+"ar": "التجارة العامة"
+},
+"Industrial and commercial supplies": {
+"ta": "தொழில்துறை & வணிகப் பொருட்கள்",
+"ar": "المستلزمات الصناعية والتجارية"
+},
+"Product sourcing": {
+"ta": "பொருள் தேடல் & ஆதாரம்",
+"ar": "البحث عن المنتجات وتوفيرها"
+},
+"Procurement and purchasing support": {
+"ta": "கொள்முதல் & வாங்குதல் ஆதரவு",
+"ar": "دعم المشتريات والشراء"
+},
+"Vendor coordination": {
+"ta": "விற்பனையாளர் ஒருங்கிணைப்பு",
+"ar": "تنسيق الموردين"
+},
+"Safety materials and equipment": {
+"ta": "பாதுகாப்புப் பொருட்கள் & உபகரணங்கள்",
+"ar": "مواد ومعدات السلامة"
+},
+"Laboratory equipment": {
+"ta": "ஆய்வக உபகரணங்கள்",
+"ar": "معدات المختبرات"
+},
+"Multi-category product supply": {
+"ta": "பல பிரிவு பொருள் விநியோகம்",
+"ar": "توريد منتجات متعددة الفئات"
+},
+"Creative Studio with Soul": {
+"ta": "ஆன்மா கொண்ட படைப்பாற்றல் ஸ்டுடியோ",
+"ar": "استوديو إبداعي بروح"
+},
+"© 2026 AashiFX. All rights reserved.": {
+"ta": "© 2026 AashiFX. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+"ar": "© 2026 AashiFX. جميع الحقوق محفوظة."
+},
+"IT & Digital Solutions": {
+"ta": "தகவல் தொழில்நுட்பம் & டிஜிட்டல் தீர்வுகள்",
+"ar": "تقنية المعلومات والحلول الرقمية"
+},
+"Operating system installation": {
+"ta": "இயக்க முறைமை நிறுவல்",
+"ar": "تثبيت أنظمة التشغيل"
+},
+"Computer and laptop support": {
+"ta": "கணினி & லேப்டாப் ஆதரவு",
+"ar": "دعم الحواسيب وأجهزة اللابتوب"
+},
+"Software installation and deployment": {
+"ta": "மென்பொருள் நிறுவல் & வரிசைப்படுத்தல்",
+"ar": "تثبيت البرمجيات ونشرها"
+},
+"Networking and infrastructure": {
+"ta": "நெட்வொர்க்கிங் & உள்கட்டமைப்பு",
+"ar": "الشبكات والبنية التحتية"
+},
+"Windows Server and system administration": {
+"ta": "விண்டோஸ் சர்வர் & சிஸ்டம் நிர்வாகம்",
+"ar": "إدارة خوادم ويندوز والأنظمة"
+},
+"Data backup and recovery": {
+"ta": "தரவு காப்பு & மீட்பு",
+"ar": "النسخ الاحتياطي للبيانات واستعادتها"
+},
+"Troubleshooting and maintenance": {
+"ta": "சிக்கல் தீர்வு & பராமரிப்பு",
+"ar": "استكشاف الأخطاء وإصلاحها والصيانة"
+},
+"System integration and automation": {
+"ta": "சிஸ்டம் ஒருங்கிணைப்பு & தானியக்கம்",
+"ar": "تكامل الأنظمة والأتمتة"
+},
+"SmartDocs & Business Documentation": {
+"ta": "ஸ்மார்ட் ஆவணங்கள் & வணிக ஆவணப்படுத்தல்",
+"ar": "المستندات الذكية والتوثيق التجاري"
+},
+"Agreements and business letters": {
+"ta": "ஒப்பந்தங்கள் & வணிகக் கடிதங்கள்",
+"ar": "الاتفاقيات والمراسلات التجارية"
+},
+"Quotations and invoices": {
+"ta": "விலைப்புள்ளிகள் & விலைப்பட்டியல்கள்",
+"ar": "عروض الأسعار والفواتير"
+},
+"Business proposals": {
+"ta": "வணிக முன்மொழிவுகள்",
+"ar": "مقترحات الأعمال"
+},
+"Company profiles": {
+"ta": "நிறுவன சுயவிவரங்கள்",
+"ar": "ملفات تعريف الشركات"
+},
+"Reports and statements": {
+"ta": "அறிக்கைகள் & கணக்கு அறிக்கைகள்",
+"ar": "التقارير وكشوف الحسابات"
+},
+"SOPs and business templates": {
+"ta": "SOP & வணிக வார்ப்புருக்கள்",
+"ar": "إجراءات التشغيل القياسية ونماذج الأعمال"
+},
+"Bilingual documentation (English/Arabic)": {
+"ta": "இருமொழி ஆவணங்கள் (ஆங்கிலம்/அரபு)",
+"ar": "التوثيق ثنائي اللغة (الإنجليزية/العربية)"
+},
+"Office administration and documentation systems": {
+"ta": "அலுவலக நிர்வாகம் & ஆவண அமைப்புகள்",
+"ar": "الإدارة المكتبية وأنظمة التوثيق"
+},
+"Transportation & Mobility": {
+"ta": "போக்குவரத்து & இயக்கம்",
+"ar": "النقل والتنقل"
+},
+"Car rental services": {
+"ta": "கார் வாடகை சேவைகள்",
+"ar": "خدمات تأجير السيارات"
+},
+"Corporate vehicle rental": {
+"ta": "நிறுவன வாகன வாடகை",
+"ar": "تأجير المركبات للشركات"
+},
+"Transportation solutions": {
+"ta": "போக்குவரத்து தீர்வுகள்",
+"ar": "حلول النقل"
+},
+"Fleet management support": {
+"ta": "வாகனக் குழு மேலாண்மை ஆதரவு",
+"ar": "دعم إدارة الأساطيل"
+},
+"Vehicle operations": {
+"ta": "வாகன செயல்பாடுகள்",
+"ar": "تشغيل المركبات"
+},
+"Mobility solutions": {
+"ta": "இயக்கத் தீர்வுகள்",
+"ar": "حلول التنقل"
+},
+"Logistics coordination": {
+"ta": "தளவாட ஒருங்கிணைப்பு",
+"ar": "تنسيق الخدمات اللوجستية"
+},
+"Branding & Creative Design": {
+"ta": "பிராண்டிங் & படைப்பு வடிவமைப்பு",
+"ar": "العلامة التجارية والتصميم الإبداعي"
+},
+"Logo design and brand identity": {
+"ta": "லோகோ வடிவமைப்பு & பிராண்ட் அடையாளம்",
+"ar": "تصميم الشعار والهوية البصرية"
+},
+"Corporate branding": {
+"ta": "கார்ப்பரேட் பிராண்டிங்",
+"ar": "هوية الشركات"
+},
+"Graphic design": {
+"ta": "கிராஃபிக் வடிவமைப்பு",
+"ar": "التصميم الجرافيكي"
+},
+"Flyers, posters and banners": {
+"ta": "பிளையர்கள், போஸ்டர்கள் & பேனர்கள்",
+"ar": "المنشورات والملصقات واللافتات"
+},
+"Social media creatives": {
+"ta": "சமூக ஊடக படைப்புகள்",
+"ar": "تصاميم وسائل التواصل الاجتماعي"
+},
+"Brochures, catalogues and company profiles": {
+"ta": "பிரசுரங்கள், கேட்டலாக்குகள் & நிறுவன சுயவிவரங்கள்",
+"ar": "الكتيبات والكتالوجات وملفات الشركات"
+},
+"Marketing and advertising materials": {
+"ta": "சந்தைப்படுத்தல் & விளம்பரப் பொருட்கள்",
+"ar": "المواد التسويقية والإعلانية"
+},
+"Creative strategy and visual communication": {
+"ta": "படைப்பு உத்தி & காட்சித் தொடர்பு",
+"ar": "الاستراتيجية الإبداعية والتواصل البصري"
+},
+"Equipment & Industrial Support": {
+"ta": "உபகரணங்கள் & தொழில்துறை ஆதரவு",
+"ar": "المعدات والدعم الصناعي"
+},
+"Equipment rental": {
+"ta": "உபகரண வாடகை",
+"ar": "تأجير المعدات"
+},
+"Heavy machinery support": {
+"ta": "கனரக இயந்திர ஆதரவு",
+"ar": "دعم الآليات الثقيلة"
+},
+"Generator rental and supply": {
+"ta": "ஜெனரேட்டர் வாடகை & விநியோகம்",
+"ar": "تأجير وتوريد المولدات"
+},
+"Industrial equipment": {
+"ta": "தொழில்துறை உபகரணங்கள்",
+"ar": "المعدات الصناعية"
+},
+"Scientific equipment": {
+"ta": "அறிவியல் உபகரணங்கள்",
+"ar": "المعدات العلمية"
+},
+"Site operational support": {
+"ta": "தள செயல்பாட்டு ஆதரவு",
+"ar": "الدعم التشغيلي للمواقع"
+},
+"Equipment sourcing": {
+"ta": "உபகரணங்கள் தேடல் & ஆதாரம்",
+"ar": "توريد المعدات"
+},
+"Manpower and operational assistance": {
+"ta": "மனிதவளம் & செயல்பாட்டு உதவி",
+"ar": "القوى العاملة والمساندة التشغيلية"
+},
+"Six pillars. One establishment. One identity.": {
+"ta": "ஆறு தூண்கள். ஒரே நிறுவனம். ஒரே அடையாளம்.",
+"ar": "ست ركائز. مؤسسة واحدة. هوية واحدة."
+},
+"Branding, documents, IT, trading, mobility and industrial support, delivered under one roof by AashiFX.": {
+"ta": "பிராண்டிங், ஆவணங்கள், ஐடி, வர்த்தகம், போக்குவரத்து மற்றும் தொழில்துறை ஆதரவு: ஒரே கூரையின் கீழ் AashiFX வழங்குகிறது.",
+"ar": "العلامة التجارية والمستندات وتقنية المعلومات والتجارة والتنقل والدعم الصناعي، تحت سقف واحد من AashiFX."
+},
+"Explore services": {
+"ta": "சேவைகளைப் பார்க்க",
+"ar": "استكشف الخدمات"
+},
+"WhatsApp us": {
+"ta": "WhatsApp-இல் தொடர்பு கொள்ள",
+"ar": "تواصل عبر واتساب"
+},
+"Our six pillars": {
+"ta": "எங்கள் ஆறு தூண்கள்",
+"ar": "ركائزنا الست"
+},
+"48 services across six pillars. Choose a pillar to explore.": {
+"ta": "ஆறு தூண்களில் 48 சேவைகள். ஒரு தூணைத் தேர்ந்தெடுங்கள்.",
+"ar": "48 خدمة عبر ست ركائز. اختر ركيزة للاستكشاف."
+},
+"8 services": {
+"ta": "8 சேவைகள்",
+"ar": "8 خدمات"
+},
+"9 services": {
+"ta": "9 சேவைகள்",
+"ar": "9 خدمات"
+},
+"7 services": {
+"ta": "7 சேவைகள்",
+"ar": "7 خدمات"
+},
+"About AashiFX": {
+"ta": "AashiFX பற்றி",
+"ar": "عن AashiFX"
+},
+"AashiFX is a creative and technical business built around one idea: a single, dependable establishment for the work that keeps your business moving, from identity and documents to IT, supply, vehicles and equipment.": {
+"ta": "AashiFX என்பது ஒரே எண்ணத்தில் உருவான படைப்பு மற்றும் தொழில்நுட்ப நிறுவனம்: அடையாளம் மற்றும் ஆவணங்கள் முதல் ஐடி, விநியோகம், வாகனங்கள் மற்றும் உபகரணங்கள் வரை உங்கள் வணிகம் தொடர்ந்து இயங்கத் தேவையான பணிகளுக்கான நம்பகமான ஒரே நிறுவனம்.",
+"ar": "AashiFX مؤسسة إبداعية وتقنية قائمة على فكرة واحدة: جهة واحدة موثوقة لكل ما يُبقي أعمالك قائمة، من الهوية والمستندات إلى تقنية المعلومات والتوريد والمركبات والمعدات."
+},
+"Founder & Creative Director": {
+"ta": "நிறுவனர் & படைப்பு இயக்குநர்",
+"ar": "المؤسس والمدير الإبداعي"
+},
+"Coming soon": {
+"ta": "விரைவில்",
+"ar": "قريبًا"
+},
+"ATLAS™ is the executive intelligence behind AashiFX. News and updates from ATLAS™ will appear here.": {
+"ta": "ATLAS™ என்பது AashiFX-இன் பின்னணியில் இயங்கும் நிர்வாக நுண்ணறிவு. ATLAS™ செய்திகள் மற்றும் புதுப்பிப்புகள் இங்கே வெளியிடப்படும்.",
+"ar": "ATLAS™ هو الذكاء التنفيذي وراء AashiFX. ستظهر هنا أخبار وتحديثات ATLAS™."
+},
+"Let's talk": {
+"ta": "பேசலாம்",
+"ar": "تواصل معنا"
+},
+"Tell us what you need. We'll respond on WhatsApp or email.": {
+"ta": "உங்களுக்குத் தேவையானதைச் சொல்லுங்கள். WhatsApp அல்லது மின்னஞ்சலில் பதிலளிப்போம்.",
+"ar": "أخبرنا بما تحتاجه وسنردّ عبر واتساب أو البريد الإلكتروني."
+},
+"Name": {
+"ta": "பெயர்",
+"ar": "الاسم"
+},
+"Email or phone": {
+"ta": "மின்னஞ்சல் அல்லது தொலைபேசி",
+"ar": "البريد الإلكتروني أو الهاتف"
+},
+"Service": {
+"ta": "சேவை",
+"ar": "الخدمة"
+},
+"Message": {
+"ta": "செய்தி",
+"ar": "الرسالة"
+},
+"Send enquiry": {
+"ta": "விசாரணை அனுப்புக",
+"ar": "أرسل استفسارك"
+},
+"Equipment rental, industrial support and operational assistance for projects and sites.": {
+"ta": "திட்டங்கள் மற்றும் தளங்களுக்கான உபகரண வாடகை, தொழில்துறை ஆதரவு மற்றும் செயல்பாட்டு உதவி.",
+"ar": "تأجير المعدات والدعم الصناعي والمساندة التشغيلية للمشاريع والمواقع."
+},
+"Practical IT support, infrastructure and automation that keep your business running.": {
+"ta": "உங்கள் வணிகம் தடையின்றி இயங்க உதவும் நடைமுறை ஐடி ஆதரவு, உள்கட்டமைப்பு மற்றும் தானியக்கம்.",
+"ar": "دعم تقني وبنية تحتية وأتمتة عملية تُبقي أعمالك في حالة تشغيل."
+},
+"Professional business documents, prepared accurately and consistently, in English and Arabic.": {
+"ta": "ஆங்கிலம் மற்றும் அரபு மொழிகளில் துல்லியமாகவும் ஒரே தரத்திலும் தயாரிக்கப்படும் தொழில்முறை வணிக ஆவணங்கள்.",
+"ar": "مستندات تجارية احترافية تُعدّ بدقة وثبات، بالإنجليزية والعربية."
+},
+"Sourcing, procurement and supply of industrial, commercial, safety, medical and laboratory items.": {
+"ta": "தொழில்துறை, வணிக, பாதுகாப்பு, மருத்துவ மற்றும் ஆய்வகப் பொருட்களின் தேடல், கொள்முதல் மற்றும் விநியோகம்.",
+"ar": "البحث والمشتريات والتوريد للمواد الصناعية والتجارية ومواد السلامة والطبية والمخبرية."
+},
+"Thank you": {
+"ta": "நன்றி",
+"ar": "شكرًا لك"
+},
+"Your enquiry has been received. We will get back to you shortly.": {
+"ta": "உங்கள் விசாரணை பெறப்பட்டது. விரைவில் தொடர்பு கொள்வோம்.",
+"ar": "تم استلام استفسارك وسنعاود التواصل معك قريبًا."
+},
+"Back to home": {
+"ta": "முகப்புக்குத் திரும்ப",
+"ar": "العودة إلى الرئيسية"
+},
+"Vehicle rental, transportation solutions and fleet support for individuals and companies.": {
+"ta": "தனிநபர்களுக்கும் நிறுவனங்களுக்கும் வாகன வாடகை, போக்குவரத்துத் தீர்வுகள் மற்றும் வாகனக் குழு ஆதரவு.",
+"ar": "تأجير المركبات وحلول النقل ودعم الأساطيل للأفراد والشركات."
+},
+"Identity, design and visual communication that give your business a clear face.": {
+"ta": "உங்கள் வணிகத்துக்குத் தெளிவான முகத்தைத் தரும் அடையாளம், வடிவமைப்பு மற்றும் காட்சித் தொடர்பு.",
+"ar": "هوية وتصميم وتواصل بصري يمنح أعمالك وجهًا واضحًا."
+}
+}

@@ -1,8 +1,8 @@
-/* AashiFX™ site: EN/AR toggle (RTL), WhatsApp links, ATLAS tabs. No dependencies. */
+/* AashiFX™ site: EN/TA/AR switch (RTL for Arabic), theme toggle, WhatsApp links, enquiry form, ATLAS tabs. No dependencies. */
 (function () {
   // WhatsApp number: country code + number, digits only
   var WA_NUMBER = "966530741843";
-  var WA_TEXT = { en: "Hi AashiFX, I'd like to discuss a project.", ar: "مرحباً AashiFX، أودّ مناقشة مشروع." };
+  var WA_TEXT = { en: "Hi AashiFX, I'd like to discuss a project.", ar: "مرحباً AashiFX، أودّ مناقشة مشروع.", ta: "வணக்கம் AashiFX, ஒரு திட்டம் பற்றி பேச விரும்புகிறேன்." };
 
   var T = {
     en: {
@@ -454,6 +454,16 @@
       "ct.topic": "Pick a pillar to start the chat",
       "ct.num": "WhatsApp and phone",
       "ct.reach": "Serving India and the GCC.",
+      "ct.email": "Email us",
+      "ct.form": "Send an enquiry",
+      "ct.f.name": "Name",
+      "ct.f.contact": "Email or phone",
+      "ct.f.service": "Service",
+      "ct.f.msg": "Message",
+      "ct.f.send": "Send enquiry",
+      "thx.t": "Thank you",
+      "thx.m": "Your enquiry has been received. We will get back to you shortly.",
+      "thx.b": "Back to home",
       "ab.eyebrow": "About",
       "ab.sub": "Brand-to-Business Integrator. One accountable person behind every project.",
       "ab.how": "How we work",
@@ -934,6 +944,16 @@
       "ct.topic": "اختر ركيزة لبدء المحادثة",
       "ct.num": "واتساب وهاتف",
       "ct.reach": "نخدم الهند ودول الخليج.",
+      "ct.email": "راسلنا عبر البريد",
+      "ct.form": "أرسل استفسارك",
+      "ct.f.name": "الاسم",
+      "ct.f.contact": "البريد الإلكتروني أو الهاتف",
+      "ct.f.service": "الخدمة",
+      "ct.f.msg": "الرسالة",
+      "ct.f.send": "أرسل استفسارك",
+      "thx.t": "شكراً لك",
+      "thx.m": "تم استلام استفسارك. سنعاود التواصل معك قريباً.",
+      "thx.b": "العودة إلى الرئيسية",
       "ab.eyebrow": "من نحن",
       "ab.sub": "مُتكامل من العلامة إلى الأعمال. شخص واحد مسؤول عن كل مشروع.",
       "ab.how": "كيف نعمل",
@@ -964,6 +984,104 @@
       "pf.ask": "اطلب نماذج",
       "at.sub": "عناوين مختارة بالإنجليزية والعربية والتاملية. قراءة قصيرة بلا ضجيج.",
       "at.note": "تصميم تجريبي. عناوين Saudi Gazette الحيّة تصل مع تغذية أطلس™."
+    },
+    ta: {
+      "nav.home": "முகப்பு",
+      "nav.services": "சேவைகள்",
+      "nav.about": "எங்களைப் பற்றி",
+      "nav.contact": "தொடர்பு",
+      "hero.title": "ஆன்மா கொண்ட படைப்பாற்றல் ஸ்டுடியோ",
+      "about.role": "நிறுவனர் & படைப்பு இயக்குநர்",
+      "s.brand.n": "பிராண்டிங் & படைப்பு வடிவமைப்பு",
+      "sv.brand.p1": "லோகோ வடிவமைப்பு & பிராண்ட் அடையாளம்",
+      "sv.brand.p2": "கார்ப்பரேட் பிராண்டிங்",
+      "sv.brand.p3": "கிராஃபிக் வடிவமைப்பு",
+      "sv.brand.p4": "பிளையர்கள், போஸ்டர்கள் & பேனர்கள்",
+      "sv.brand.p5": "சமூக ஊடக படைப்புகள்",
+      "sv.brand.p6": "பிரசுரங்கள், கேட்டலாக்குகள் & நிறுவன சுயவிவரங்கள்",
+      "sv.brand.p7": "சந்தைப்படுத்தல் & விளம்பரப் பொருட்கள்",
+      "sv.brand.p8": "படைப்பு உத்தி & காட்சித் தொடர்பு",
+      "s.office.n": "ஸ்மார்ட் ஆவணங்கள் & வணிக ஆவணப்படுத்தல்",
+      "sv.office.p1": "விலைப்புள்ளிகள் & விலைப்பட்டியல்கள்",
+      "sv.office.p2": "வணிக முன்மொழிவுகள்",
+      "sv.office.p3": "நிறுவன சுயவிவரங்கள்",
+      "sv.office.p4": "அறிக்கைகள் & கணக்கு அறிக்கைகள்",
+      "sv.office.p5": "SOP & வணிக வார்ப்புருக்கள்",
+      "sv.office.p6": "ஒப்பந்தங்கள் & வணிகக் கடிதங்கள்",
+      "sv.office.p7": "இருமொழி ஆவணங்கள் (ஆங்கிலம்/அரபு)",
+      "sv.office.p8": "அலுவலக நிர்வாகம் & ஆவண அமைப்புகள்",
+      "s.tech.n": "தகவல் தொழில்நுட்பம் & டிஜிட்டல் தீர்வுகள்",
+      "sv.tech.p1": "கணினி & லேப்டாப் ஆதரவு",
+      "sv.tech.p2": "இயக்க முறைமை நிறுவல்",
+      "sv.tech.p3": "மென்பொருள் நிறுவல் & வரிசைப்படுத்தல்",
+      "sv.tech.p4": "நெட்வொர்க்கிங் & உள்கட்டமைப்பு",
+      "sv.tech.p5": "விண்டோஸ் சர்வர் & சிஸ்டம் நிர்வாகம்",
+      "sv.tech.p6": "தரவு காப்பு & மீட்பு",
+      "sv.tech.p7": "சிக்கல் தீர்வு & பராமரிப்பு",
+      "sv.tech.p8": "சிஸ்டம் ஒருங்கிணைப்பு & தானியக்கம்",
+      "s.trade.n": "வர்த்தகம், கொள்முதல் & விநியோகம்",
+      "sv.trade.p1": "பொது வர்த்தகம்",
+      "sv.trade.p2": "தொழில்துறை & வணிகப் பொருட்கள்",
+      "sv.trade.p3": "பொருள் தேடல் & ஆதாரம்",
+      "sv.trade.p4": "கொள்முதல் & வாங்குதல் ஆதரவு",
+      "sv.trade.p5": "விற்பனையாளர் ஒருங்கிணைப்பு",
+      "sv.trade.p6": "பாதுகாப்புப் பொருட்கள் & உபகரணங்கள்",
+      "sv.trade.p7": "மருத்துவ & அறிவியல் உபகரணங்கள்",
+      "sv.trade.p8": "ஆய்வக உபகரணங்கள்",
+      "sv.trade.p9": "பல பிரிவு பொருள் விநியோகம்",
+      "s.drive.n": "போக்குவரத்து & இயக்கம்",
+      "sv.drive.p1": "கார் வாடகை சேவைகள்",
+      "sv.drive.p2": "நிறுவன வாகன வாடகை",
+      "sv.drive.p3": "போக்குவரத்து தீர்வுகள்",
+      "sv.drive.p4": "வாகனக் குழு மேலாண்மை ஆதரவு",
+      "sv.drive.p5": "வாகன செயல்பாடுகள்",
+      "sv.drive.p6": "இயக்கத் தீர்வுகள்",
+      "sv.drive.p7": "தளவாட ஒருங்கிணைப்பு",
+      "s.power.n": "உபகரணங்கள் & தொழில்துறை ஆதரவு",
+      "sv.power.p1": "உபகரண வாடகை",
+      "sv.power.p2": "கனரக இயந்திர ஆதரவு",
+      "sv.power.p3": "ஜெனரேட்டர் வாடகை & விநியோகம்",
+      "sv.power.p4": "தொழில்துறை உபகரணங்கள்",
+      "sv.power.p5": "அறிவியல் உபகரணங்கள்",
+      "sv.power.p6": "தள செயல்பாட்டு ஆதரவு",
+      "sv.power.p7": "உபகரணங்கள் தேடல் & ஆதாரம்",
+      "sv.power.p8": "மனிதவளம் & செயல்பாட்டு உதவி",
+      "sv.title": "சேவைகள்",
+      "pg.drive.d3": "வாகனக் குழு மேலாண்மை ஆதரவு",
+      "pg.power.d2": "ஜெனரேட்டர் வாடகை & விநியோகம்",
+      "pg.power.d3": "தள செயல்பாட்டு ஆதரவு",
+      "sub.tradex-general-trading.g1": "பொருள் தேடல் & ஆதாரம்",
+      "sub.tradex-medical-scientific.g1": "உபகரணங்கள் தேடல் & ஆதாரம்",
+      "sub.powerx-industrial-equipment.g1": "உபகரணங்கள் தேடல் & ஆதாரம்",
+      "sub.powerx-equipment-sourcing.g3": "விற்பனையாளர் ஒருங்கிணைப்பு",
+      "ct.title": "தொடர்பு",
+      "ct.email": "மின்னஞ்சல் அனுப்புக",
+      "ct.f.name": "பெயர்",
+      "ct.f.contact": "மின்னஞ்சல் அல்லது தொலைபேசி",
+      "ct.f.service": "சேவை",
+      "ct.f.msg": "செய்தி",
+      "ct.f.send": "விசாரணை அனுப்புக",
+      "thx.t": "நன்றி",
+      "thx.m": "உங்கள் விசாரணை பெறப்பட்டது. விரைவில் தொடர்பு கொள்வோம்.",
+      "thx.b": "முகப்புக்குத் திரும்ப",
+      "ab.eyebrow": "எங்களைப் பற்றி",
+      "ct.form": "விசாரணை அனுப்புக",
+      "nav.portfolio": "பணித்தொகுப்பு",
+      "hero.cta": "WhatsApp-இல் உரையாடுங்கள்",
+      "hero.cta2": "ஆறு தூண்களைப் பார்க்க",
+      "hero.tag": "வடிவமை. ஆவணப்படுத்து. வழங்கு.",
+      "final.cta2": "தொடர்பு பக்கம்",
+      "pill.eyebrow": "ஆறு தூண்கள்",
+      "pill.title": "ஒரே நிறுவனம். ஒரே அடையாளம்.",
+      "foot.line": "ஆறு தூண்கள். ஒரே நிறுவனம். ஒரே அடையாளம்.",
+      "foot.rights": "© 2026 AashiFX™. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+      "pg.back": "அனைத்து சேவைகள்",
+      "sv.ask": "WhatsApp-இல் விசாரிக்க",
+      "pg.cta": "WhatsApp செய்தியுடன் தொடங்குங்கள்",
+      "pg.s1": "கோரிக்கை",
+      "pg.s2": "செயலாக்கம்",
+      "pg.s3": "வழங்கல்",
+      "pg.proc": "எப்படி இயங்குகிறது"
     }
   };
 
@@ -977,11 +1095,11 @@
   }
 
   function apply(lang) {
-    var d = T[lang];
+    var d = T[lang], f = T.en;
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var v = d[el.getAttribute("data-i18n")];
+      var k = el.getAttribute("data-i18n"), v = d[k] || f[k];
       if (v) el.textContent = v;
     });
     document.querySelectorAll("[data-wa]").forEach(function (a) {
@@ -989,16 +1107,30 @@
       var text = WA_TEXT[lang] + (topic ? " (" + topic + ")" : "");
       a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
     });
+    document.querySelectorAll("[data-lang]").forEach(function (b) { var on = b.getAttribute("data-lang") === lang; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
     selectTab(lang);
     store("lang", lang);
   }
 
   var lang = store("lang");
-  if (lang !== "ar" && lang !== "en") lang = (navigator.language || "").slice(0, 2) === "ar" ? "ar" : "en";
+  if (lang !== "ar" && lang !== "en" && lang !== "ta") { var nl = (navigator.language || "").slice(0, 2); lang = nl === "ar" ? "ar" : nl === "ta" ? "ta" : "en"; }
   apply(lang);
 
+  var form = document.getElementById("enquiry");
+  if (form) form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var fd = new FormData(form);
+    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(fd).toString() })
+      .then(function (r) { if (!r.ok) throw new Error("not ok"); location.href = "thanks.html"; })
+      .catch(function () {
+        var t = WA_TEXT[lang] + "\n" + fd.get("name") + "\n" + fd.get("contact") + "\n" + (fd.get("pillar") || "") + "\n" + fd.get("message");
+        window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t), "_blank");
+      });
+  });
+
   document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-lang-toggle]")) { lang = lang === "en" ? "ar" : "en"; apply(lang); return; }
+    var lb = e.target.closest("[data-lang]");
+    if (lb) { lang = lb.getAttribute("data-lang"); apply(lang); return; }
     if (e.target.closest("[data-theme-toggle]")) {
       var root = document.documentElement;
       var cur = root.getAttribute("data-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
