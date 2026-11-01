@@ -154,7 +154,9 @@ PILL = {p[0]:p for p in PILLARS}
 FOOTNAV = '<nav class="foot-nav" aria-label="Pillars">' + ''.join(f'<a href="{SLUG[p[0]]}.html">{p[1]}</a>' for p in PILLARS) + '</nav>'
 
 # ---------- sub-services + illustrations ----------
-ill = {}; exec(open(os.path.join(TOOLS, "illustrations.py")).read(), ill)
+ma = {"__name__": "modern_art"}; exec(open(os.path.join(TOOLS, "modern_art.py")).read(), ma)
+_n = [0]
+def _seed(): _n[0] += 1; return _n[0]
 _sn = {}; exec(open(os.path.join(TOOLS, "subservices.py")).read(), _sn); SUBS = _sn["SUBS"]
 os.makedirs(R + "assets/art", exist_ok=True)
 for k_, e_, a_ in [("sub.get","What you get","ما تحصل عليه"),("sub.more","More from this pillar","المزيد من هذه الركيزة")]: add(k_, e_, a_)
@@ -166,11 +168,12 @@ for k_, items_ in SUBS.items():
         add(f"sub.{sid_}.d", de_, da_)
         for m_, (x_, y_) in enumerate(zip(ge_, ga_), 1): add(f"sub.{sid_}.g{m_}", x_, y_)
         SUBLIST[k_].append((sid_, f"sv.{k_}.p{n_}", slug_))
-        assert slug_ in ill["S_"], slug_
-        open(R + f"assets/art/{sid_}.svg", "w").write(ill["render"](slug_, k_, n_ + len(SLUG)))
+        assert slug_ in ma["SG"], slug_
+        open(R + f"assets/art/{sid_}.svg", "w").write(ma["art"](slug_, k_, _seed()))
 for name_, pil_ in [("page-contact","site"),("page-about","site"),("page-portfolio","site"),("page-services","site"),("profile-car","drive"),("profile-heavy","power")]:
-    open(R + f"assets/art/{name_}.svg", "w").write(ill["render"](name_, pil_, 3))
-HERO_SVG = ill["hero_master"]({k_: SLUG[k_] + ".html" for k_ in SLUG})
+    open(R + f"assets/art/{name_}.svg", "w").write(ma["art"](name_, pil_, _seed()))
+for k_ in SLUG: open(R + f"assets/art/{SLUG[k_]}.svg", "w").write(ma["art"]("pillar-" + k_, k_, _seed()))
+HERO_SVG = ma["hero_mix"]({k_: SLUG[k_] + ".html" for k_ in SLUG})
 def chip_link(k, n):
     sid, tk, _ = SUBLIST[k][n-1]
     return f'<li class="chip"><a href="{sid}.html" {i(tk)}>{en(tk)}</a></li>'
